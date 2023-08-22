@@ -5,6 +5,41 @@ final class UserData {
     public enum SettingsKeys: String, CaseIterable {
         case currencies
         case pairs
+        case currenciesNew
+        case stringExchange
+    }
+
+    static var stringExchange: [String] {
+        get {
+            if let saved = UserDefaults.standard.object(forKey: SettingsKeys.stringExchange.rawValue) as? [String] {
+                return saved
+            }
+            return []
+        }
+    }
+
+    static var currenciesNew: [String: Double] {
+        get {
+            if let saved = UserDefaults.standard.object(forKey: SettingsKeys.currenciesNew.rawValue) as? [String: Double] {
+                return saved
+            }
+
+            return [
+                "USD": 0.0, //USD
+                "EUR": 1.0, //EUR
+                "GBP" : 1.0, //GBP
+                "AUD": 0.0, //AUD
+                "BRL": 0.0, // BRL
+                "CAD": 0.0, //CAD
+                "CNY": 0.0, //CNY
+                "INR": 0.0, //INR
+                "JPY": 0.0, //JPY
+                "RUB": 0.0, //RUB
+                "CHF": 0.0, //CHF
+                "NZD": 0.0, //NZD
+                "TRY": 0.0 //TRY
+            ]
+        }
     }
 
     static var currencies: [String: Double] {

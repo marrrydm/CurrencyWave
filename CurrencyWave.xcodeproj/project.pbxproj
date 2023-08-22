@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		C1BA9A0B04EB113FEB773B2B /* Pods_CurrencyWave.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59329106F0511B2577660D88 /* Pods_CurrencyWave.framework */; };
+		F8089AF52A94C7B7005F5590 /* NetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8089AF42A94C7B7005F5590 /* NetworkModel.swift */; };
+		F8089AF72A94C7E3005F5590 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8089AF62A94C7E3005F5590 /* NetworkController.swift */; };
+		F8089AFA2A94CDDB005F5590 /* ExchangeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8089AF92A94CDDB005F5590 /* ExchangeCell.swift */; };
 		F8442D3E2A8BA8DA00A80BE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8442D3D2A8BA8DA00A80BE7 /* AppDelegate.swift */; };
 		F8442D402A8BA8DA00A80BE7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8442D3F2A8BA8DA00A80BE7 /* SceneDelegate.swift */; };
 		F8442D422A8BA8DA00A80BE7 /* PreloaderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8442D412A8BA8DA00A80BE7 /* PreloaderController.swift */; };
@@ -22,12 +25,19 @@
 		F8442D8D2A8E339F00A80BE7 /* TradingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8442D8C2A8E339F00A80BE7 /* TradingView.swift */; };
 		F8442D8F2A8E365300A80BE7 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8442D8E2A8E365300A80BE7 /* UserData.swift */; };
 		F8442D912A8E36A900A80BE7 /* PairCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8442D902A8E36A900A80BE7 /* PairCell.swift */; };
+		F8442D932A8E469A00A80BE7 /* CountryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8442D922A8E469A00A80BE7 /* CountryController.swift */; };
+		F8442D9E2A9294E100A80BE7 /* CountryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8442D9D2A9294E100A80BE7 /* CountryCell.swift */; };
+		F8442DA12A92A04900A80BE7 /* CurrencyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8442DA02A92A04900A80BE7 /* CurrencyCell.swift */; };
+		F8442DA32A92A0F700A80BE7 /* CurrencyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8442DA22A92A0F700A80BE7 /* CurrencyController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0C7A05E59F7F8CEB37A60220 /* Pods-CurrencyWave.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyWave.release.xcconfig"; path = "Target Support Files/Pods-CurrencyWave/Pods-CurrencyWave.release.xcconfig"; sourceTree = "<group>"; };
 		59329106F0511B2577660D88 /* Pods_CurrencyWave.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CurrencyWave.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6DAEC744A656C1ADDAC9305 /* Pods-CurrencyWave.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyWave.debug.xcconfig"; path = "Target Support Files/Pods-CurrencyWave/Pods-CurrencyWave.debug.xcconfig"; sourceTree = "<group>"; };
+		F8089AF42A94C7B7005F5590 /* NetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModel.swift; sourceTree = "<group>"; };
+		F8089AF62A94C7E3005F5590 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
+		F8089AF92A94CDDB005F5590 /* ExchangeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeCell.swift; sourceTree = "<group>"; };
 		F8442D3A2A8BA8DA00A80BE7 /* CurrencyWave.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyWave.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8442D3D2A8BA8DA00A80BE7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8442D3F2A8BA8DA00A80BE7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -44,6 +54,10 @@
 		F8442D8C2A8E339F00A80BE7 /* TradingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradingView.swift; sourceTree = "<group>"; };
 		F8442D8E2A8E365300A80BE7 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		F8442D902A8E36A900A80BE7 /* PairCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairCell.swift; sourceTree = "<group>"; };
+		F8442D922A8E469A00A80BE7 /* CountryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryController.swift; sourceTree = "<group>"; };
+		F8442D9D2A9294E100A80BE7 /* CountryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCell.swift; sourceTree = "<group>"; };
+		F8442DA02A92A04900A80BE7 /* CurrencyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyCell.swift; sourceTree = "<group>"; };
+		F8442DA22A92A0F700A80BE7 /* CurrencyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +89,31 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		F8089AF32A94C7AD005F5590 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				F8089AF42A94C7B7005F5590 /* NetworkModel.swift */,
+				F8089AF62A94C7E3005F5590 /* NetworkController.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		F8089AF82A94CDCF005F5590 /* Exchange */ = {
+			isa = PBXGroup;
+			children = (
+				F8442D542A8CC77300A80BE7 /* ExchangeController.swift */,
+				F8089AF92A94CDDB005F5590 /* ExchangeCell.swift */,
+			);
+			path = Exchange;
+			sourceTree = "<group>";
+		};
+		F8089AFB2A94E50F005F5590 /* Converter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Converter;
+			sourceTree = "<group>";
+		};
 		F8442D312A8BA8DA00A80BE7 = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +135,7 @@
 		F8442D3C2A8BA8DA00A80BE7 /* CurrencyWave */ = {
 			isa = PBXGroup;
 			children = (
+				F8089AF32A94C7AD005F5590 /* Network */,
 				F8442D512A8CC51200A80BE7 /* TabBar */,
 				F8442D3D2A8BA8DA00A80BE7 /* AppDelegate.swift */,
 				F8442D3F2A8BA8DA00A80BE7 /* SceneDelegate.swift */,
@@ -111,16 +151,45 @@
 		F8442D512A8CC51200A80BE7 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
+				F8089AFB2A94E50F005F5590 /* Converter */,
+				F8089AF82A94CDCF005F5590 /* Exchange */,
+				F8442D9F2A92A04200A80BE7 /* Currency */,
+				F8442D9C2A9294D300A80BE7 /* Country */,
+				F8442D942A8E476B00A80BE7 /* Charts */,
 				F8442D522A8CC5A900A80BE7 /* TabBarController.swift */,
-				F8442D542A8CC77300A80BE7 /* ExchangeController.swift */,
 				F8442D562A8CC78500A80BE7 /* ConverterController.swift */,
-				F8442D582A8CC79700A80BE7 /* ChartsController.swift */,
 				F8442D5A2A8CC7A600A80BE7 /* SettingController.swift */,
-				F8442D8C2A8E339F00A80BE7 /* TradingView.swift */,
 				F8442D8E2A8E365300A80BE7 /* UserData.swift */,
-				F8442D902A8E36A900A80BE7 /* PairCell.swift */,
 			);
 			path = TabBar;
+			sourceTree = "<group>";
+		};
+		F8442D942A8E476B00A80BE7 /* Charts */ = {
+			isa = PBXGroup;
+			children = (
+				F8442D582A8CC79700A80BE7 /* ChartsController.swift */,
+				F8442D8C2A8E339F00A80BE7 /* TradingView.swift */,
+				F8442D902A8E36A900A80BE7 /* PairCell.swift */,
+			);
+			path = Charts;
+			sourceTree = "<group>";
+		};
+		F8442D9C2A9294D300A80BE7 /* Country */ = {
+			isa = PBXGroup;
+			children = (
+				F8442D922A8E469A00A80BE7 /* CountryController.swift */,
+				F8442D9D2A9294E100A80BE7 /* CountryCell.swift */,
+			);
+			path = Country;
+			sourceTree = "<group>";
+		};
+		F8442D9F2A92A04200A80BE7 /* Currency */ = {
+			isa = PBXGroup;
+			children = (
+				F8442DA02A92A04900A80BE7 /* CurrencyCell.swift */,
+				F8442DA22A92A0F700A80BE7 /* CurrencyController.swift */,
+			);
+			path = Currency;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,16 +307,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8089AFA2A94CDDB005F5590 /* ExchangeCell.swift in Sources */,
 				F8442D422A8BA8DA00A80BE7 /* PreloaderController.swift in Sources */,
 				F8442D592A8CC79700A80BE7 /* ChartsController.swift in Sources */,
+				F8442DA32A92A0F700A80BE7 /* CurrencyController.swift in Sources */,
+				F8089AF72A94C7E3005F5590 /* NetworkController.swift in Sources */,
 				F8442D532A8CC5A900A80BE7 /* TabBarController.swift in Sources */,
 				F8442D3E2A8BA8DA00A80BE7 /* AppDelegate.swift in Sources */,
 				F8442D912A8E36A900A80BE7 /* PairCell.swift in Sources */,
+				F8442DA12A92A04900A80BE7 /* CurrencyCell.swift in Sources */,
 				F8442D5B2A8CC7A600A80BE7 /* SettingController.swift in Sources */,
+				F8089AF52A94C7B7005F5590 /* NetworkModel.swift in Sources */,
+				F8442D932A8E469A00A80BE7 /* CountryController.swift in Sources */,
 				F8442D552A8CC77300A80BE7 /* ExchangeController.swift in Sources */,
 				F8442D572A8CC78500A80BE7 /* ConverterController.swift in Sources */,
 				F8442D8D2A8E339F00A80BE7 /* TradingView.swift in Sources */,
 				F8442D8F2A8E365300A80BE7 /* UserData.swift in Sources */,
+				F8442D9E2A9294E100A80BE7 /* CountryCell.swift in Sources */,
 				F8442D402A8BA8DA00A80BE7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
