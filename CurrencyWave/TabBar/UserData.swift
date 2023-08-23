@@ -7,6 +7,54 @@ final class UserData {
         case pairs
         case currenciesNew
         case stringExchange
+        case stringConverter
+        case percent
+    }
+
+    static var percent: [String: Double] {
+        get {
+            if let saved = UserDefaults.standard.object(forKey: SettingsKeys.percent.rawValue) as? [String: Double] {
+                return saved
+            }
+            return ["USD": 0.0, //USD
+                    "EUR": 1.0, //EUR
+                    "GBP" : 1.0, //GBP
+                    "AUD": 0.0, //AUD
+                    "BRL": 0.0, // BRL
+                    "CAD": 0.0, //CAD
+                    "CNY": 0.0, //CNY
+                    "INR": 0.0, //INR
+                    "ILS": 0.0, //ILS
+                    "JPY": 0.0, //JPY
+                    "RUB": 0.0, //RUB
+                    "CHF": 0.0, //CHF
+                    "NZD": 0.0, //NZD
+                    "TRY": 0.0 //TRY
+            ]
+        }
+    }
+
+    static var stringConverter: [String: Double] {
+        get {
+            if let saved = UserDefaults.standard.object(forKey: SettingsKeys.stringConverter.rawValue) as? [String: Double] {
+                return saved
+            }
+            return ["USD": 0.0, //USD
+                    "EUR": 1.0, //EUR
+                    "GBP" : 1.0, //GBP
+                    "AUD": 0.0, //AUD
+                    "BRL": 0.0, // BRL
+                    "CAD": 0.0, //CAD
+                    "CNY": 0.0, //CNY
+                    "INR": 0.0, //INR
+                    "ILS": 0.0, //ILS
+                    "JPY": 0.0, //JPY
+                    "RUB": 0.0, //RUB
+                    "CHF": 0.0, //CHF
+                    "NZD": 0.0, //NZD
+                    "TRY": 0.0 //TRY
+            ]
+        }
     }
 
     static var stringExchange: [String] {
@@ -23,7 +71,6 @@ final class UserData {
             if let saved = UserDefaults.standard.object(forKey: SettingsKeys.currenciesNew.rawValue) as? [String: Double] {
                 return saved
             }
-
             return [
                 "USD": 0.0, //USD
                 "EUR": 1.0, //EUR
@@ -33,6 +80,7 @@ final class UserData {
                 "CAD": 0.0, //CAD
                 "CNY": 0.0, //CNY
                 "INR": 0.0, //INR
+                "ILS": 0.0, //ILS
                 "JPY": 0.0, //JPY
                 "RUB": 0.0, //RUB
                 "CHF": 0.0, //CHF

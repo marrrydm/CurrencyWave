@@ -4,6 +4,10 @@ protocol CurrencyDelegate: AnyObject {
     func updateCurrency(_ value: [String]?)
 }
 
+protocol CurrencyDelegate2: AnyObject {
+    func updateCurrency2(_ value: [String: Double]?)
+}
+
 class CurrencyController: UIViewController {
     private let titleLabel: UILabel = {
         let labelTitle = UILabel()
@@ -57,28 +61,40 @@ class CurrencyController: UIViewController {
     private var arrCurrency = [Int]()
     private var boolCheck = [false, false, false, false, false, false, false, false, false, false, false, false, false]
 
-    private let currencies:  [(UIImage?, String, String)] = [
-        (UIImage(named: "usa"), "United States Dollar (USD)", "USD"),
-        (UIImage(named: "eur"), "Euro (EUR)", "EUR"),
-        (UIImage(named: "united"), "British Pound Sterling (GBP)", "GBP"),
-        (UIImage(named: "australia"), "Australian Dollar (AUD)", "AUD"),
-        (UIImage(named: "brazil"), "Brazilian Real (BRL)", "BRL"),
-        (UIImage(named: "canada"), "Canadian Dollar (CAD)", "CAD"),
-        (UIImage(named: "china"), "Chinese Yuan (CNY)", "CNY"),
-        (UIImage(named: "india"), "Indian Rupee (INR)", "INR"),
-        (UIImage(named: "japan"), "Japanese Yen (JPY)", "JPY"),
-        (UIImage(named: "russia"), "Russian Ruble (RUB)", "RUB"),
-        (UIImage(named: "switzerland"), "Swiss Franc (CHF)", "CHF"),
-        (UIImage(named: "new-zealand"), "New Zealand Dollar", "NZD"),
-        (UIImage(named: "turkey"), "Turkey", "TRY")
+    private let currencies1: [(UIImage?, String, String, Double)] = [
+        (UIImage(named: "usa"), "United States Dollar (USD)", "USD", 1.0),
+        (UIImage(named: "eur"), "Euro (EUR)", "EUR", 1.0917),
+        (UIImage(named: "united"), "British Pound Sterling (GBP)", "GBP", 1.2716),
+        (UIImage(named: "australia"), "Australian Dollar (AUD)", "AUD", 0.64),
+        (UIImage(named: "brazil"), "Brazilian Real (BRL)", "BRL", 0.2011),
+        (UIImage(named: "canada"), "Canadian Dollar (CAD)", "CAD", 0.7379),
+        (UIImage(named: "china"), "Chinese Yuan (CNY)", "CNY", 0.1366),
+        (UIImage(named: "india"), "Indian Rupee (INR)", "INR", 0.0121),
+        (UIImage(named: "japan"), "Japanese Yen (JPY)", "JPY", 0.0069),
+        (UIImage(named: "russia"), "Russian Ruble (RUB)", "RUB", 0.0106),
+        (UIImage(named: "switzerland"), "Swiss Franc (CHF)", "CHF", 1.1393),
+        (UIImage(named: "new-zealand"), "New Zealand Dollar", "NZD", 0.59),
+        (UIImage(named: "turkey"), "Turkey", "TRY", 0.0368)
     ]
-
+    private var currencies = [(UIImage?, String, String, Double)]()
+    
     weak var delegate: CurrencyDelegate?
+    weak var delegate2: CurrencyDelegate2?
+    var num: Int?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 0.95, green: 0.95, blue: 0.97, alpha: 1)
         navigationController?.navigationBar.isHidden = true
+
+        for var item in currencies1 {
+            for i in UserData.percent {
+                if i.key == item.2 {
+                    item.3 = i.value
+                    currencies.append(item)
+                }
+            }
+        }
 
         setupViews()
         makeConstraints()
@@ -174,11 +190,18 @@ extension CurrencyController: UITableViewDelegate {
 extension CurrencyController {
     @objc private func pop() {
         var result = [String]()
+        var result2 = [String: Double]()
         for item in arrCurrency {
             result.append(currencies[item].2)
+            result2.updateValue(currencies[item].3, forKey: currencies[item].2)
         }
-        delegate?.updateCurrency(result)
-        UserDefaults.standard.set(result, forKey: UserData.SettingsKeys.stringExchange.rawValue)
+        if num == 0 {
+            delegate?.updateCurrency(result)
+            UserDefaults.standard.set(result, forKey: UserData.SettingsKeys.stringExchange.rawValue)
+        } else {
+            delegate2?.updateCurrency2(result2)
+            UserDefaults.standard.set(result2, forKey: UserData.SettingsKeys.stringConverter.rawValue)
+        }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
             self.navigationController?.popViewController(animated: false)
         }

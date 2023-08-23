@@ -7,4 +7,5 @@ target 'CurrencyWave' do
 
   # Pods for CurrencyWave
   pod 'TransitionableTab', '~> 0.2.0'
+  pod 'IQKeyboardManagerSwift'
 end

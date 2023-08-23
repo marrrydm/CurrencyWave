@@ -51,6 +51,7 @@ class CountryController: UIViewController {
         return tableView
     }()
 
+    var imageView: UIImage?
     var currency: String?
     private let currencies: [(String, String)] = [
         ("United States, $", "USD"), //USD
@@ -69,6 +70,7 @@ class CountryController: UIViewController {
     ]
 
     weak var delegate: CountryDelegate?
+    var num: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,6 +82,11 @@ class CountryController: UIViewController {
 
         tableView.delegate = self
         tableView.dataSource = self
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        imgView.image = imageView ?? UIImage(named: "russia")
     }
 
     private func setupViews() {

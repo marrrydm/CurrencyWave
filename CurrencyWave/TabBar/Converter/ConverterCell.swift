@@ -1,6 +1,6 @@
 import UIKit
 
-class ExchangeCell: UICollectionViewCell {
+class ConverterCell: UICollectionViewCell {
     var currencyLabel: UILabel = {
         var view = UILabel()
         view.textColor = .black
@@ -27,24 +27,37 @@ class ExchangeCell: UICollectionViewCell {
         return view
     }()
 
-    private var arrImgCurrency: [(UIImage?, String)] = [
-        (UIImage(named: "usa"), "USD"),
-        (UIImage(named: "eur"), "EUR"),
-        (UIImage(named: "united"), "GBP"),
-        (UIImage(named: "australia"), "AUD"),
-        (UIImage(named: "brazil"), "BRL"),
-        (UIImage(named: "canada"), "CAD"),
-        (UIImage(named: "china"), "CNY"),
-        (UIImage(named: "india"), "INR"),
-        (UIImage(named: "israel"), "ILS"),
-        (UIImage(named: "japan"), "JPY"),
-        (UIImage(named: "russia"), "RUB"),
-        (UIImage(named: "switzerland"), "CHF"),
-        (UIImage(named: "new-zealand"), "NZD"),
-        (UIImage(named: "turkey"), "TRY")
+    lazy var textField: UITextField = {
+        let view = UITextField()
+        view.placeholder = "0"
+        view.textAlignment = .right
+        view.keyboardType = .numberPad
+        view.textColor = .black
+        view.font = .systemFont(ofSize: 17, weight: .semibold)
+        view.isUserInteractionEnabled = false
+
+        return view
+    }()
+
+    private var arrImgCurrency: [(UIImage?, String, String)] = [
+        (UIImage(named: "usa"), "USD", "$"),
+        (UIImage(named: "eur"), "EUR", "€"),
+        (UIImage(named: "united"), "GBP", "£"),
+        (UIImage(named: "australia"), "AUD", "$"),
+        (UIImage(named: "brazil"), "BRL", "R$"),
+        (UIImage(named: "canada"), "CAD", "$"),
+        (UIImage(named: "china"), "CNY", "¥"),
+        (UIImage(named: "india"), "INR", "₹"),
+        (UIImage(named: "japan"), "JPY", "¥"),
+        (UIImage(named: "russia"), "RUB", "₽"),
+        (UIImage(named: "switzerland"), "CHF", "₣"),
+        (UIImage(named: "new-zealand"), "NZD", "$"),
+        (UIImage(named: "turkey"), "TRY", "₺"),
+        (UIImage(named: "israel"), "ILS", "₪")
     ]
 
     static let id = "Cell"
+    var callback: ((String, Double)->())?
 
     func setup(data: String) {
         currencyLabel.text = data
@@ -52,6 +65,7 @@ class ExchangeCell: UICollectionViewCell {
         for item in arrImgCurrency {
             if item.1 == data {
                 img.image = item.0
+                valueLabel.text = item.2
             }
         }
 
@@ -63,7 +77,7 @@ class ExchangeCell: UICollectionViewCell {
     }
 
     private func setupViews() {
-        contentView.addSubviews(img, currencyLabel, valueLabel)
+        contentView.addSubviews(img, currencyLabel, valueLabel, textField)
     }
 
     private func makeConstraints() {
@@ -79,6 +93,12 @@ class ExchangeCell: UICollectionViewCell {
 
         valueLabel.translatesAutoresizingMaskIntoConstraints = false
         valueLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16).isActive = true
+        valueLabel.widthAnchor.constraint(equalToConstant: 22).isActive = true
         valueLabel.centerYAnchor.constraint(equalTo: img.centerYAnchor).isActive = true
+
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.trailingAnchor.constraint(equalTo: valueLabel.leadingAnchor, constant: -5).isActive = true
+        textField.leadingAnchor.constraint(equalTo: currencyLabel.trailingAnchor, constant: 30).isActive = true
+        textField.centerYAnchor.constraint(equalTo: img.centerYAnchor).isActive = true
     }
 }

@@ -29,7 +29,7 @@ class TabBarController: UITabBarController {
             ),
             generateVC(
                 viewController:
-                    UINavigationController(rootViewController: CountryController()),
+                    UINavigationController(rootViewController: ConverterController()),
                 image: UIImage(named: "Converter"), title: "Converter".localize()
             ),
             generateVC(

@@ -1,10 +1,10 @@
 import UIKit
 
-class ExchangeController: UIViewController, UIScrollViewDelegate {
+class ConverterController: UIViewController, UIScrollViewDelegate {
     private let titleLabel: UILabel = {
         let view = UILabel()
         view.textColor = .black
-        view.text = "Exchange rates".localize()
+        view.text = "Currency Converter".localize()
         view.font = .systemFont(ofSize: 34, weight: .bold)
         view.textAlignment = .left
 
@@ -37,15 +37,13 @@ class ExchangeController: UIViewController, UIScrollViewDelegate {
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
         view.backgroundColor = .clear
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.register(ExchangeCell.self, forCellWithReuseIdentifier: "ExchangeCell")
+        view.register(ConverterCell.self, forCellWithReuseIdentifier: "ConverterCell")
         view.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 20, right: 0)
         view.showsVerticalScrollIndicator = false
         view.showsHorizontalScrollIndicator = false
 
         return view
     }()
-
-    private var currencies = UserData.stringExchange
 
     private var convert = [(String, Double, String, UIImage?)]()
     private var convert1: [(String, Double, String, UIImage?)] = [
@@ -61,13 +59,25 @@ class ExchangeController: UIViewController, UIScrollViewDelegate {
         ("JPY", 0.0069, "¥", UIImage(named: "japan")),
         ("MXN", 0.059, "$", UIImage(named: "mexico")),
         ("RUB", 0.0106, "₽", UIImage(named: "russia")),
-        ("TRY", 0.037, "₺", UIImage(named: "turkey"))
+        ("TRY", 0.037, "₺", UIImage(named: "turkey")),
+        ("CHF", 1.1393, "₣", UIImage(named: "switzerland")),
+        ("NZD", 0.59, "₽", UIImage(named: "new-zealand")),
+        ("EUR", 1.0917, "€", UIImage(named: "eur"))
     ]
 
-    let currensiesUD = Array(UserData.currenciesNew)
-
+    private var currencies = UserData.stringConverter
+    private var currenciesArrayKeys = Array(UserData.stringConverter.keys)
+    private let currensiesUD = Array(UserData.currenciesNew)
     private var percent = 0.0106
     private var sign = "₽"
+    private var changedCurrensies = [(String, Double)]()
+
+    private var editCurrency: String = ""
+    private var editValue: Double = 0.0
+
+    private var arrTxtField = [String: Double]()
+
+    private var isBool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -110,29 +120,67 @@ class ExchangeController: UIViewController, UIScrollViewDelegate {
     }
 }
 
-extension ExchangeController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension ConverterController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        isBool = true
+        arrTxtField = [:]
+        var perc = 0.0
+        let txtFld = Double(textField.text!)!
+        
+        for i in convert {
+            if i.0 == editCurrency {
+                perc = i.1
+            }
+        }
+
+        for i in currencies {
+            let result = ( 1 / ((i.value) / perc)) * txtFld
+            arrTxtField.updateValue(result, forKey: i.key)
+        }
+        collectionView.reloadData()
+    }
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         currencies.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ExchangeCell", for: indexPath) as! ExchangeCell
-        cell.setup(data: currencies[indexPath.row])
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ConverterCell", for: indexPath) as! ConverterCell
+        cell.setup(data: currenciesArrayKeys[indexPath.row])
+        cell.textField.delegate = self
+        addDoneButtonOnKeyboard(textField: cell.textField)
 
         var value = 0.0
-        for i in currensiesUD {
-            if i.key == currencies[indexPath.row] {
-                value = i.value
+        for (_, item) in currensiesUD.enumerated() {
+            if item.key == currenciesArrayKeys[indexPath.row] {
+                value = item.value
+                changedCurrensies.append((item.key, value))
             }
         }
 
-        var result = (value) / percent
-        if (Double(round(10 * result) / 10)) == 1.0 {
-            result = 1.0
+        cell.textField.isUserInteractionEnabled = false
+
+        if isBool {
+            for i in arrTxtField {
+                if i.key == currenciesArrayKeys[indexPath.row] {
+                    cell.textField.text = "\((Double(round(10000 * i.value) / 10000)))"
+                }
+            }
+        } else {
+            cell.textField.text = "0"
         }
-        cell.valueLabel.text = "\(Double(round(100 * result) / 100)) \(sign)"
 
         return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: false)
+        editCurrency = currenciesArrayKeys[indexPath.row]
+        let cell: ConverterCell = collectionView.cellForItem(at: indexPath) as! ConverterCell
+
+        cell.textField.isUserInteractionEnabled = false
+        cell.textField.isUserInteractionEnabled = true
+        self.becomeFirstResponder()
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -140,26 +188,45 @@ extension ExchangeController: UICollectionViewDelegate, UICollectionViewDataSour
     }
 }
 
-extension ExchangeController {
+extension ConverterController {
+    func addDoneButtonOnKeyboard(textField: UITextField) {
+        let doneToolbar: UIToolbar = UIToolbar(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
+        doneToolbar.barStyle = .default
+
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let done: UIBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(doneButtonAction))
+
+        let items = [flexSpace, done]
+        doneToolbar.items = items
+        doneToolbar.sizeToFit()
+
+        textField.inputAccessoryView = doneToolbar
+    }
+
+
+    @objc func doneButtonAction() {
+        self.resignFirstResponder()
+        self.view.endEditing(true)
+    }
+}
+
+extension ConverterController {
     @objc private func pushVC() {
         let vc = CurrencyController()
-        vc.num = 0
-
-        vc.delegate = self
+        vc.num = 1
+        vc.delegate2 = self
         navigationController?.pushViewController(vc, animated: false)
     }
 
     @objc private func pushCountry() {
         let vc = CountryController()
-        vc.num = 0
-        vc.imageView = imgView.image
-
+        vc.num = 1
         vc.delegate = self
         navigationController?.pushViewController(vc, animated: false)
     }
 }
 
-extension ExchangeController: CountryDelegate {
+extension ConverterController: CountryDelegate {
     func updateCountry(_ value: String?) {
         for item in convert {
             if item.0 == value {
@@ -172,9 +239,11 @@ extension ExchangeController: CountryDelegate {
     }
 }
 
-extension ExchangeController: CurrencyDelegate {
-    func updateCurrency(_ value: [String]?) {
-        currencies = value ?? []
+extension ConverterController: CurrencyDelegate2 {
+    func updateCurrency2(_ value: [String: Double]?) {
+        currencies = value ?? [:]
+        UserDefaults.standard.set(currencies, forKey: UserData.SettingsKeys.stringConverter.rawValue)
+        currenciesArrayKeys = Array(UserData.stringConverter.keys)
         collectionView.reloadData()
     }
 }
