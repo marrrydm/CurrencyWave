@@ -47,27 +47,32 @@ class ExchangeController: UIViewController, UIScrollViewDelegate {
 
     private var currencies = UserData.stringExchange
 
-    private var convert = [(String, Double, String, UIImage?)]()
-    private var convert1: [(String, Double, String, UIImage?)] = [
-        ("USD", 1.0, "$", UIImage(named: "usa")),
-        ("GBP", 1.2716, "£", UIImage(named: "united")),
-        ("AUD", 0.64, "$", UIImage(named: "australia")),
-        ("BRL", 0.2011, "R$", UIImage(named: "brazil")),
-        ("CAD", 0.7379, "$", UIImage(named: "canada")),
-        ("CNY", 0.1366, "¥", UIImage(named: "china")),
-        ("INR", 0.0121, "₹", UIImage(named: "india")),
-        ("IDR", 0.000065, "Rp", UIImage(named: "indonesia")),
-        ("ILS", 0.26, "₪", UIImage(named: "israel")),
-        ("JPY", 0.0069, "¥", UIImage(named: "japan")),
-        ("MXN", 0.059, "$", UIImage(named: "mexico")),
-        ("RUB", 0.0106, "₽", UIImage(named: "russia")),
-        ("TRY", 0.037, "₺", UIImage(named: "turkey"))
+    private var convert = [(String, Double, String, UIImage?, String)]()
+    private var convert1: [(String, Double, String, UIImage?, String)] = [
+        ("USD", 1.0, "$", UIImage(named: "usa"), "usa"),
+        ("GBP", 1.2716, "£", UIImage(named: "united"), "united"),
+        ("AUD", 0.64, "$", UIImage(named: "australia"), "australia"),
+        ("BRL", 0.2011, "R$", UIImage(named: "brazil"), "brazil"),
+        ("CAD", 0.7379, "$", UIImage(named: "canada"), "canada"),
+        ("CNY", 0.1366, "¥", UIImage(named: "china"), "china"),
+        ("INR", 0.0121, "₹", UIImage(named: "india"), "india"),
+        ("IDR", 0.000065, "Rp", UIImage(named: "indonesia"), "indonesia"),
+        ("ILS", 0.26, "₪", UIImage(named: "israel"), "israel"),
+        ("JPY", 0.0069, "¥", UIImage(named: "japan"), "japan"),
+        ("MXN", 0.059, "$", UIImage(named: "mexico"), "mexico"),
+        ("RUB", 0.0106, "₽", UIImage(named: "russia"), "russia"),
+        ("TRY", 0.037, "₺", UIImage(named: "turkey"), "turkey")
     ]
 
     let currensiesUD = Array(UserData.currenciesNew)
 
     private var percent = 0.0106
     private var sign = "₽"
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        imgView.image = UIImage(named: UserData.country)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,6 +85,13 @@ class ExchangeController: UIViewController, UIScrollViewDelegate {
                     item.1 = i.value
                     convert.append(item)
                 }
+            }
+        }
+
+        for item in convert {
+            if item.4 == UserData.country {
+                percent = item.1
+                sign = item.2
             }
         }
 
@@ -166,6 +178,8 @@ extension ExchangeController: CountryDelegate {
                 percent = item.1
                 sign = item.2
                 imgView.image = item.3
+
+                UserDefaults.standard.set(item.4, forKey: UserData.SettingsKeys.country.rawValue)
             }
         }
         collectionView.reloadData()

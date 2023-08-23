@@ -45,24 +45,24 @@ class ConverterController: UIViewController, UIScrollViewDelegate {
         return view
     }()
 
-    private var convert = [(String, Double, String, UIImage?)]()
-    private var convert1: [(String, Double, String, UIImage?)] = [
-        ("USD", 1.0, "$", UIImage(named: "usa")),
-        ("GBP", 1.2716, "£", UIImage(named: "united")),
-        ("AUD", 0.64, "$", UIImage(named: "australia")),
-        ("BRL", 0.2011, "R$", UIImage(named: "brazil")),
-        ("CAD", 0.7379, "$", UIImage(named: "canada")),
-        ("CNY", 0.1366, "¥", UIImage(named: "china")),
-        ("INR", 0.0121, "₹", UIImage(named: "india")),
-        ("IDR", 0.000065, "Rp", UIImage(named: "indonesia")),
-        ("ILS", 0.26, "₪", UIImage(named: "israel")),
-        ("JPY", 0.0069, "¥", UIImage(named: "japan")),
-        ("MXN", 0.059, "$", UIImage(named: "mexico")),
-        ("RUB", 0.0106, "₽", UIImage(named: "russia")),
-        ("TRY", 0.037, "₺", UIImage(named: "turkey")),
-        ("CHF", 1.1393, "₣", UIImage(named: "switzerland")),
-        ("NZD", 0.59, "₽", UIImage(named: "new-zealand")),
-        ("EUR", 1.0917, "€", UIImage(named: "eur"))
+    private var convert = [(String, Double, String, UIImage?, String)]()
+    private var convert1: [(String, Double, String, UIImage?, String)] = [
+        ("USD", 1.0, "$", UIImage(named: "usa"), "usa"),
+        ("GBP", 1.2716, "£", UIImage(named: "united"), "united"),
+        ("AUD", 0.64, "$", UIImage(named: "australia"), "australia"),
+        ("BRL", 0.2011, "R$", UIImage(named: "brazil"), "brazil"),
+        ("CAD", 0.7379, "$", UIImage(named: "canada"), "canada"),
+        ("CNY", 0.1366, "¥", UIImage(named: "china"), "china"),
+        ("INR", 0.0121, "₹", UIImage(named: "india"), "india"),
+        ("IDR", 0.000065, "Rp", UIImage(named: "indonesia"), "indonesia"),
+        ("ILS", 0.26, "₪", UIImage(named: "israel"), "israel"),
+        ("JPY", 0.0069, "¥", UIImage(named: "japan"), "japan"),
+        ("MXN", 0.059, "$", UIImage(named: "mexico"), "mexico"),
+        ("RUB", 0.0106, "₽", UIImage(named: "russia"), "russia"),
+        ("TRY", 0.037, "₺", UIImage(named: "turkey"), "turkey"),
+        ("CHF", 1.1393, "₣", UIImage(named: "switzerland"), "switzerland"),
+        ("NZD", 0.59, "₽", UIImage(named: "new-zealand"), "new-zealand"),
+        ("EUR", 1.0917, "€", UIImage(named: "eur"), "eur")
     ]
 
     private var currencies = UserData.stringConverter
@@ -71,13 +71,15 @@ class ConverterController: UIViewController, UIScrollViewDelegate {
     private var percent = 0.0106
     private var sign = "₽"
     private var changedCurrensies = [(String, Double)]()
-
     private var editCurrency: String = ""
-    private var editValue: Double = 0.0
-
     private var arrTxtField = [String: Double]()
-
     private var isBool = false
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        imgView.image = UIImage(named: UserData.country)
+        arrTxtField = [:]
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,6 +92,13 @@ class ConverterController: UIViewController, UIScrollViewDelegate {
                     item.1 = i.value
                     convert.append(item)
                 }
+            }
+        }
+
+        for item in convert {
+            if item.4 == UserData.country {
+                percent = item.1
+                sign = item.2
             }
         }
 
@@ -233,6 +242,8 @@ extension ConverterController: CountryDelegate {
                 percent = item.1
                 sign = item.2
                 imgView.image = item.3
+
+                UserDefaults.standard.set(item.4, forKey: UserData.SettingsKeys.country.rawValue)
             }
         }
         collectionView.reloadData()

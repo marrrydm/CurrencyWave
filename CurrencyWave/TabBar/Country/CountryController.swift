@@ -53,9 +53,10 @@ class CountryController: UIViewController {
 
     var imageView: UIImage?
     var currency: String?
+
     private let currencies: [(String, String)] = [
         ("United States, $", "USD"), //USD
-        ("Great Britain, £", "EUR"), //EUR
+        ("Great Britain, £", "GBP"), //GBP
         ("Australia, $", "AUD"), //AUD
         ("Brazil, R$", "BRL"), // BRL
         ("Canada, $", "CAD"), //CAD
@@ -66,7 +67,7 @@ class CountryController: UIViewController {
         ("Japan, ¥", "JPY"), //JPY
         ("Mexico, $", "MXN"), //MXN
         ("Russia, ₽", "RUB"), //RUB
-        ("Turkey, ₺", "TRY") //TRY
+        ("Turkey, ₺", "TRY"), //TRY
     ]
 
     weak var delegate: CountryDelegate?

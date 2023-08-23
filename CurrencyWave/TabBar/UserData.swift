@@ -1,4 +1,4 @@
-import Foundation
+import UIKit
 
 final class UserData {
 
@@ -9,6 +9,16 @@ final class UserData {
         case stringExchange
         case stringConverter
         case percent
+        case country
+    }
+
+    static var country: String {
+        get {
+            if let saved = UserDefaults.standard.object(forKey: SettingsKeys.country.rawValue) as? String {
+                return saved
+            }
+            return "russia"
+        }
     }
 
     static var percent: [String: Double] {
@@ -16,20 +26,20 @@ final class UserData {
             if let saved = UserDefaults.standard.object(forKey: SettingsKeys.percent.rawValue) as? [String: Double] {
                 return saved
             }
-            return ["USD": 0.0, //USD
+            return ["USD": 1.0, //USD
                     "EUR": 1.0, //EUR
                     "GBP" : 1.0, //GBP
-                    "AUD": 0.0, //AUD
-                    "BRL": 0.0, // BRL
-                    "CAD": 0.0, //CAD
-                    "CNY": 0.0, //CNY
-                    "INR": 0.0, //INR
-                    "ILS": 0.0, //ILS
-                    "JPY": 0.0, //JPY
-                    "RUB": 0.0, //RUB
-                    "CHF": 0.0, //CHF
-                    "NZD": 0.0, //NZD
-                    "TRY": 0.0 //TRY
+                    "AUD": 1.0, //AUD
+                    "BRL": 1.0, // BRL
+                    "CAD": 1.0, //CAD
+                    "CNY": 1.0, //CNY
+                    "INR": 1.0, //INR
+                    "ILS": 1.0, //ILS
+                    "JPY": 1.0, //JPY
+                    "RUB": 1.0, //RUB
+                    "CHF": 1.0, //CHF
+                    "NZD": 1.0, //NZD
+                    "TRY": 1.0 //TRY
             ]
         }
     }
@@ -39,20 +49,20 @@ final class UserData {
             if let saved = UserDefaults.standard.object(forKey: SettingsKeys.stringConverter.rawValue) as? [String: Double] {
                 return saved
             }
-            return ["USD": 0.0, //USD
+            return ["USD": 1.0, //USD
                     "EUR": 1.0, //EUR
                     "GBP" : 1.0, //GBP
-                    "AUD": 0.0, //AUD
-                    "BRL": 0.0, // BRL
-                    "CAD": 0.0, //CAD
-                    "CNY": 0.0, //CNY
-                    "INR": 0.0, //INR
-                    "ILS": 0.0, //ILS
-                    "JPY": 0.0, //JPY
-                    "RUB": 0.0, //RUB
-                    "CHF": 0.0, //CHF
-                    "NZD": 0.0, //NZD
-                    "TRY": 0.0 //TRY
+                    "AUD": 1.0, //AUD
+                    "BRL": 1.0, // BRL
+                    "CAD": 1.0, //CAD
+                    "CNY": 1.0, //CNY
+                    "INR": 1.0, //INR
+                    "ILS": 1.0, //ILS
+                    "JPY": 1.0, //JPY
+                    "RUB": 1.0, //RUB
+                    "CHF": 1.0, //CHF
+                    "NZD": 1.0, //NZD
+                    "TRY": 1.0 //TRY
             ]
         }
     }
@@ -72,20 +82,20 @@ final class UserData {
                 return saved
             }
             return [
-                "USD": 0.0, //USD
+                "USD": 1.0, //USD
                 "EUR": 1.0, //EUR
                 "GBP" : 1.0, //GBP
-                "AUD": 0.0, //AUD
-                "BRL": 0.0, // BRL
-                "CAD": 0.0, //CAD
-                "CNY": 0.0, //CNY
-                "INR": 0.0, //INR
-                "ILS": 0.0, //ILS
-                "JPY": 0.0, //JPY
-                "RUB": 0.0, //RUB
-                "CHF": 0.0, //CHF
-                "NZD": 0.0, //NZD
-                "TRY": 0.0 //TRY
+                "AUD": 1.0, //AUD
+                "BRL": 1.0, // BRL
+                "CAD": 1.0, //CAD
+                "CNY": 1.0, //CNY
+                "INR": 1.0, //INR
+                "ILS": 1.0, //ILS
+                "JPY": 1.0, //JPY
+                "RUB": 1.0, //RUB
+                "CHF": 1.0, //CHF
+                "NZD": 1.0, //NZD
+                "TRY": 1.0 //TRY
             ]
         }
     }
