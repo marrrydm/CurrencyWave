@@ -65,7 +65,7 @@ class ConverterController: UIViewController, UIScrollViewDelegate {
         ("EUR", 1.0917, "€", UIImage(named: "eur"), "eur")
     ]
 
-    private var currencies = UserData.stringConverter
+    private var currencies = [String: Double]()
     private var currenciesArrayKeys = Array(UserData.stringConverter.keys)
     private let currensiesUD = Array(UserData.currenciesNew)
     private var percent = 0.0106

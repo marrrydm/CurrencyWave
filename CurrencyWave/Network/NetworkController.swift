@@ -12,7 +12,8 @@ final class NetworkController {
     }
 
     private func getCurrencies() {
-        let url = "https://api.currencyapi.com/v3/latest?apikey=cur_live_NNOyHZFUMqV21OplHWxQXe9ndhBWsgWwkdDXrAjF"
+//        "https://api.currencyapi.com/v3/latest?apikey=cur_live_fc7451e6b7fc7be5f47c96b13ace2378"
+        let url = "http://api.currencyapi.com/v3/latest?apikey=cur_live_zJk5p17yBerLLZy3sKEG7jidEtvG6nFc4QjTEbjQ"
 
         if let url = URL(string: url) {
             URLSession.shared.dataTask(with: url) { [weak self] data, _, _  in

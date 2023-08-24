@@ -74,6 +74,19 @@ class ExchangeController: UIViewController, UIScrollViewDelegate {
         imgView.image = UIImage(named: UserData.country)
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        for item in convert {
+            if item.4 == UserData.country {
+                percent = item.1
+                sign = item.2
+                imgView.image = item.3
+            }
+        }
+
+        collectionView.reloadData()
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 0.95, green: 0.95, blue: 0.97, alpha: 1)
