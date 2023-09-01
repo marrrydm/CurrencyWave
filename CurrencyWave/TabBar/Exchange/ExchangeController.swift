@@ -24,7 +24,7 @@ class ExchangeController: UIViewController, UIScrollViewDelegate {
 
     private lazy var imgView: UIImageView = {
         let view = UIImageView()
-        view.image = UIImage(named: "russia")
+        view.image = UIImage(named: "usa")
         view.contentMode = .scaleAspectFit
         view.isUserInteractionEnabled = true
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(pushCountry)))
@@ -169,7 +169,7 @@ extension ExchangeController {
     @objc private func pushVC() {
         let vc = CurrencyController()
         vc.num = 0
-
+        vc.currenciesLast = Array(currencies)
         vc.delegate = self
         navigationController?.pushViewController(vc, animated: false)
     }

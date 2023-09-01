@@ -81,6 +81,7 @@ class CurrencyController: UIViewController {
     weak var delegate: CurrencyDelegate?
     weak var delegate2: CurrencyDelegate2?
     var num: Int?
+    var currenciesLast = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -143,6 +144,13 @@ extension CurrencyController: UITableViewDataSource {
             fatalError("failed to get value cell")
         }
 
+        for j in currenciesLast {
+            if j == currencies[indexPath.row].2 {
+                boolCheck[indexPath.row] = true
+                arrCurrency.append(indexPath.row)
+            }
+        }
+
         cell.configure(pair: currencies[indexPath.row].1, selected: boolCheck[indexPath.row])
 
         if indexPath.row == 0 {
@@ -153,6 +161,7 @@ extension CurrencyController: UITableViewDataSource {
         }
 
         if indexPath.row == (currencies.count - 1) {
+            currenciesLast = []
             cell.layer.cornerRadius = 14
             cell.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
             cell.layer.masksToBounds = true
@@ -195,6 +204,7 @@ extension CurrencyController {
             result.append(currencies[item].2)
             result2.updateValue(currencies[item].3, forKey: currencies[item].2)
         }
+        
         if num == 0 {
             delegate?.updateCurrency(result)
             UserDefaults.standard.set(result, forKey: UserData.SettingsKeys.stringExchange.rawValue)
@@ -204,6 +214,8 @@ extension CurrencyController {
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
             self.navigationController?.popViewController(animated: false)
+            UserDefaults.standard.set(result, forKey: UserData.SettingsKeys.stringExchange.rawValue)
+            UserDefaults.standard.set(result2, forKey: UserData.SettingsKeys.stringConverter.rawValue)
         }
     }
 }

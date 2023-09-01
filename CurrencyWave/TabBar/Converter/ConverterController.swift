@@ -24,7 +24,7 @@ class ConverterController: UIViewController, UIScrollViewDelegate {
 
     private lazy var imgView: UIImageView = {
         let view = UIImageView()
-        view.image = UIImage(named: "russia")
+        view.image = UIImage(named: "usa")
         view.contentMode = .scaleAspectFit
         view.isUserInteractionEnabled = true
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(pushCountry)))
@@ -86,6 +86,17 @@ class ConverterController: UIViewController, UIScrollViewDelegate {
         view.backgroundColor = UIColor(red: 0.95, green: 0.95, blue: 0.97, alpha: 1)
         navigationController?.navigationBar.isHidden = true
 
+        let currencies1 = UserData.stringConverter
+
+        for var item in currencies1 {
+            for i in UserData.percent {
+                if i.key == item.key {
+                    item.value = i.value
+                    currencies.updateValue(item.value, forKey: item.key)
+                }
+            }
+        }
+
         for var item in convert1 {
             for i in UserData.percent {
                 if i.key == item.0 {
@@ -126,6 +137,8 @@ class ConverterController: UIViewController, UIScrollViewDelegate {
 
         collectionView.delegate = self
         collectionView.dataSource = self
+
+        collectionView.reloadData()
     }
 }
 
@@ -224,6 +237,7 @@ extension ConverterController {
         let vc = CurrencyController()
         vc.num = 1
         vc.delegate2 = self
+        vc.currenciesLast = Array(currencies.keys)
         navigationController?.pushViewController(vc, animated: false)
     }
 

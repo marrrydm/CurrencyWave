@@ -17,7 +17,7 @@ final class UserData {
             if let saved = UserDefaults.standard.object(forKey: SettingsKeys.country.rawValue) as? String {
                 return saved
             }
-            return "russia"
+            return "usa"
         }
     }
 
@@ -51,18 +51,8 @@ final class UserData {
             }
             return ["USD": 1.0, //USD
                     "EUR": 1.0, //EUR
-                    "GBP" : 1.0, //GBP
                     "AUD": 1.0, //AUD
-                    "BRL": 1.0, // BRL
-                    "CAD": 1.0, //CAD
-                    "CNY": 1.0, //CNY
-                    "INR": 1.0, //INR
-                    "ILS": 1.0, //ILS
-                    "JPY": 1.0, //JPY
-                    "RUB": 1.0, //RUB
-                    "CHF": 1.0, //CHF
-                    "NZD": 1.0, //NZD
-                    "TRY": 1.0 //TRY
+                    "CAD": 1.0
             ]
         }
     }
@@ -72,7 +62,12 @@ final class UserData {
             if let saved = UserDefaults.standard.object(forKey: SettingsKeys.stringExchange.rawValue) as? [String] {
                 return saved
             }
-            return []
+            return [
+                "EUR",
+                "GBP",
+                "AUD",
+                "CAD"
+            ]
         }
     }
 
