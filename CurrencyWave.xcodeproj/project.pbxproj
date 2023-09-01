@@ -30,6 +30,9 @@
 		F8442D9E2A9294E100A80BE7 /* CountryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8442D9D2A9294E100A80BE7 /* CountryCell.swift */; };
 		F8442DA12A92A04900A80BE7 /* CurrencyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8442DA02A92A04900A80BE7 /* CurrencyCell.swift */; };
 		F8442DA32A92A0F700A80BE7 /* CurrencyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8442DA22A92A0F700A80BE7 /* CurrencyController.swift */; };
+		F851A8C92AA1FA6900583D71 /* FirstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F851A8C82AA1FA6900583D71 /* FirstVC.swift */; };
+		F851A8CB2AA1FE2E00583D71 /* SecondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F851A8CA2AA1FE2E00583D71 /* SecondVC.swift */; };
+		F851A8CD2AA1FE8500583D71 /* ThirdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F851A8CC2AA1FE8500583D71 /* ThirdVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +63,9 @@
 		F8442D9D2A9294E100A80BE7 /* CountryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCell.swift; sourceTree = "<group>"; };
 		F8442DA02A92A04900A80BE7 /* CurrencyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyCell.swift; sourceTree = "<group>"; };
 		F8442DA22A92A0F700A80BE7 /* CurrencyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyController.swift; sourceTree = "<group>"; };
+		F851A8C82AA1FA6900583D71 /* FirstVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstVC.swift; sourceTree = "<group>"; };
+		F851A8CA2AA1FE2E00583D71 /* SecondVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondVC.swift; sourceTree = "<group>"; };
+		F851A8CC2AA1FE8500583D71 /* ThirdVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,11 +145,11 @@
 		F8442D3C2A8BA8DA00A80BE7 /* CurrencyWave */ = {
 			isa = PBXGroup;
 			children = (
+				F851A8C72AA1FA5C00583D71 /* Onboarding */,
 				F8089AF32A94C7AD005F5590 /* Network */,
 				F8442D512A8CC51200A80BE7 /* TabBar */,
 				F8442D3D2A8BA8DA00A80BE7 /* AppDelegate.swift */,
 				F8442D3F2A8BA8DA00A80BE7 /* SceneDelegate.swift */,
-				F8442D412A8BA8DA00A80BE7 /* PreloaderController.swift */,
 				F8442D462A8BA8DB00A80BE7 /* Assets.xcassets */,
 				F8442D482A8BA8DB00A80BE7 /* LaunchScreen.storyboard */,
 				F8442D4B2A8BA8DB00A80BE7 /* Info.plist */,
@@ -193,6 +199,17 @@
 				F8442DA22A92A0F700A80BE7 /* CurrencyController.swift */,
 			);
 			path = Currency;
+			sourceTree = "<group>";
+		};
+		F851A8C72AA1FA5C00583D71 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				F8442D412A8BA8DA00A80BE7 /* PreloaderController.swift */,
+				F851A8C82AA1FA6900583D71 /* FirstVC.swift */,
+				F851A8CA2AA1FE2E00583D71 /* SecondVC.swift */,
+				F851A8CC2AA1FE8500583D71 /* ThirdVC.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,9 +340,12 @@
 				F8442DA12A92A04900A80BE7 /* CurrencyCell.swift in Sources */,
 				F8442D5B2A8CC7A600A80BE7 /* SettingController.swift in Sources */,
 				F8089AF52A94C7B7005F5590 /* NetworkModel.swift in Sources */,
+				F851A8C92AA1FA6900583D71 /* FirstVC.swift in Sources */,
 				F8442D932A8E469A00A80BE7 /* CountryController.swift in Sources */,
 				F8442D552A8CC77300A80BE7 /* ExchangeController.swift in Sources */,
+				F851A8CB2AA1FE2E00583D71 /* SecondVC.swift in Sources */,
 				F8442D8D2A8E339F00A80BE7 /* TradingView.swift in Sources */,
+				F851A8CD2AA1FE8500583D71 /* ThirdVC.swift in Sources */,
 				F8442D8F2A8E365300A80BE7 /* UserData.swift in Sources */,
 				F8442D9E2A9294E100A80BE7 /* CountryCell.swift in Sources */,
 				F8442D402A8BA8DA00A80BE7 /* SceneDelegate.swift in Sources */,

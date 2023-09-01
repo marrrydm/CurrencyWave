@@ -1,3 +1,5 @@
+import AppsFlyerLib
+import FirebaseAnalytics
 import UIKit
 
 class PreloaderController: UIViewController {
@@ -9,6 +11,12 @@ class PreloaderController: UIViewController {
 
         return view
     }()
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        AppsFlyerLib.shared().logEvent("onboarding_start", withValues: nil)
+        Analytics.logEvent("onboarding_start", parameters: nil)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,13 +32,19 @@ class PreloaderController: UIViewController {
         ])
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-            let vc = TabBarController()
-            vc.modalPresentationStyle = .fullScreen
-            self.present(vc, animated: true)
+            if (UserDefaults.standard.string(forKey: "showedOnboarding") != nil) == true {
+                let vc = TabBarController()
+                vc.modalPresentationStyle = .fullScreen
+                self.present(vc, animated: true)
+            } else {
+                UserDefaults.standard.set(true, forKey: "showedOnboarding")
+                let vc = FirstVC()
+                vc.modalPresentationStyle = .fullScreen
+                self.present(vc, animated: true)
+            }
         })
     }
 }
-
 
 public extension UIView {
     func addSubviews(_ views: UIView...) {
