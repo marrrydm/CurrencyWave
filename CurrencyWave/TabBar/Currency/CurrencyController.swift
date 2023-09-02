@@ -75,7 +75,7 @@ class CurrencyController: UIViewController {
         (UIImage(named: "switzerland"), "Swiss Franc (CHF)", "CHF", 1.1393, 10),
         (UIImage(named: "new-zealand"), "New Zealand Dollar", "NZD", 0.59, 11),
         (UIImage(named: "turkey"), "Turkey", "TRY", 0.0368, 12),
-        (UIImage(named: "thb"), "Thailand", "THB", 0.0285, 13)
+        (UIImage(named: "thb"), "Thai Baht (THB)", "THB", 0.0285, 13)
     ]
 
     private var currencies = [(UIImage?, String, String, Double, Int)]()

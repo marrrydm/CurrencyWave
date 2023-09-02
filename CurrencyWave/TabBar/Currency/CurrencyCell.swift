@@ -47,7 +47,7 @@ class CurrencyCell: UITableViewCell {
         (UIImage(named: "switzerland"), "Swiss Franc (CHF)"),
         (UIImage(named: "new-zealand"), "New Zealand Dollar"),
         (UIImage(named: "turkey"), "Turkey"),
-        (UIImage(named: "thb"), "Thailand")
+        (UIImage(named: "thb"), "Thai Baht (THB)")
     ]
 
     static let id = "Cell"
