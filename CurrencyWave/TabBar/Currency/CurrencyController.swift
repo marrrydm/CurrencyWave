@@ -59,29 +59,32 @@ class CurrencyController: UIViewController {
 
     var currency: String?
     private var arrCurrency = [Int]()
-    private var boolCheck = [false, false, false, false, false, false, false, false, false, false, false, false, false]
+    private var boolCheck = [false, false, false, false, false, false, false, false, false, false, false, false, false, false]
 
-    private let currencies1: [(UIImage?, String, String, Double)] = [
-        (UIImage(named: "usa"), "United States Dollar (USD)", "USD", 1.0),
-        (UIImage(named: "eur"), "Euro (EUR)", "EUR", 1.0917),
-        (UIImage(named: "united"), "British Pound Sterling (GBP)", "GBP", 1.2716),
-        (UIImage(named: "australia"), "Australian Dollar (AUD)", "AUD", 0.64),
-        (UIImage(named: "brazil"), "Brazilian Real (BRL)", "BRL", 0.2011),
-        (UIImage(named: "canada"), "Canadian Dollar (CAD)", "CAD", 0.7379),
-        (UIImage(named: "china"), "Chinese Yuan (CNY)", "CNY", 0.1366),
-        (UIImage(named: "india"), "Indian Rupee (INR)", "INR", 0.0121),
-        (UIImage(named: "japan"), "Japanese Yen (JPY)", "JPY", 0.0069),
-        (UIImage(named: "russia"), "Russian Ruble (RUB)", "RUB", 0.0106),
-        (UIImage(named: "switzerland"), "Swiss Franc (CHF)", "CHF", 1.1393),
-        (UIImage(named: "new-zealand"), "New Zealand Dollar", "NZD", 0.59),
-        (UIImage(named: "turkey"), "Turkey", "TRY", 0.0368)
+    private let currencies1: [(UIImage?, String, String, Double, Int)] = [
+        (UIImage(named: "usa"), "United States Dollar (USD)", "USD", 1.0, 0),
+        (UIImage(named: "eur"), "Euro (EUR)", "EUR", 1.0917, 1),
+        (UIImage(named: "united"), "British Pound Sterling (GBP)", "GBP", 1.2716, 2),
+        (UIImage(named: "australia"), "Australian Dollar (AUD)", "AUD", 0.64, 3),
+        (UIImage(named: "brazil"), "Brazilian Real (BRL)", "BRL", 0.2011, 4),
+        (UIImage(named: "canada"), "Canadian Dollar (CAD)", "CAD", 0.7379, 5),
+        (UIImage(named: "china"), "Chinese Yuan (CNY)", "CNY", 0.1366, 6),
+        (UIImage(named: "india"), "Indian Rupee (INR)", "INR", 0.0121, 7),
+        (UIImage(named: "japan"), "Japanese Yen (JPY)", "JPY", 0.0069, 8),
+        (UIImage(named: "russia"), "Russian Ruble (RUB)", "RUB", 0.0106, 9),
+        (UIImage(named: "switzerland"), "Swiss Franc (CHF)", "CHF", 1.1393, 10),
+        (UIImage(named: "new-zealand"), "New Zealand Dollar", "NZD", 0.59, 11),
+        (UIImage(named: "turkey"), "Turkey", "TRY", 0.0368, 12),
+        (UIImage(named: "thb"), "Thailand", "THB", 0.0285, 13)
     ]
-    private var currencies = [(UIImage?, String, String, Double)]()
+
+    private var currencies = [(UIImage?, String, String, Double, Int)]()
     
     weak var delegate: CurrencyDelegate?
     weak var delegate2: CurrencyDelegate2?
     var num: Int?
     var currenciesLast = [String]()
+    private var step = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -93,6 +96,15 @@ class CurrencyController: UIViewController {
                 if i.key == item.2 {
                     item.3 = i.value
                     currencies.append(item)
+                }
+            }
+        }
+
+        for i in currencies {
+            for j in currenciesLast {
+                if i.2 == j {
+                    boolCheck[i.4] = true
+                    arrCurrency.append(i.4)
                 }
             }
         }
@@ -144,13 +156,6 @@ extension CurrencyController: UITableViewDataSource {
             fatalError("failed to get value cell")
         }
 
-        for j in currenciesLast {
-            if j == currencies[indexPath.row].2 {
-                boolCheck[indexPath.row] = true
-                arrCurrency.append(indexPath.row)
-            }
-        }
-
         cell.configure(pair: currencies[indexPath.row].1, selected: boolCheck[indexPath.row])
 
         if indexPath.row == 0 {
@@ -200,11 +205,12 @@ extension CurrencyController {
     @objc private func pop() {
         var result = [String]()
         var result2 = [String: Double]()
+
         for item in arrCurrency {
             result.append(currencies[item].2)
             result2.updateValue(currencies[item].3, forKey: currencies[item].2)
         }
-        
+
         if num == 0 {
             delegate?.updateCurrency(result)
             UserDefaults.standard.set(result, forKey: UserData.SettingsKeys.stringExchange.rawValue)

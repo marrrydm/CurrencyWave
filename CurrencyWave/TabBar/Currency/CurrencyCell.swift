@@ -46,7 +46,8 @@ class CurrencyCell: UITableViewCell {
         (UIImage(named: "russia"), "Russian Ruble (RUB)"),
         (UIImage(named: "switzerland"), "Swiss Franc (CHF)"),
         (UIImage(named: "new-zealand"), "New Zealand Dollar"),
-        (UIImage(named: "turkey"), "Turkey")
+        (UIImage(named: "turkey"), "Turkey"),
+        (UIImage(named: "thb"), "Thailand")
     ]
 
     static let id = "Cell"
@@ -72,7 +73,7 @@ class CurrencyCell: UITableViewCell {
                 imgPair.image = item.0
             }
         }
-//        buttonSelected.isHidden = !selected
+        //        buttonSelected.isHidden = !selected
     }
 
     private func setupViews() {
@@ -95,7 +96,7 @@ class CurrencyCell: UITableViewCell {
         countryLabel.translatesAutoresizingMaskIntoConstraints = false
         countryLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         countryLabel.leadingAnchor.constraint(equalTo: imgPair.trailingAnchor, constant: 16).isActive = true
-
+        
         checkImg.translatesAutoresizingMaskIntoConstraints = false
         checkImg.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         checkImg.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16).isActive = true

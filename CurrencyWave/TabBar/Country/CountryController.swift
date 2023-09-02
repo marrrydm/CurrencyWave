@@ -68,6 +68,7 @@ class CountryController: UIViewController {
         ("Mexico, $", "MXN"), //MXN
         ("Russia, ₽", "RUB"), //RUB
         ("Turkey, ₺", "TRY"), //TRY
+        ("Thailand, ฿", "THB"), //THB
     ]
 
     weak var delegate: CountryDelegate?

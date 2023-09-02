@@ -46,7 +46,8 @@ class CountryCell: UITableViewCell {
         (UIImage(named: "japan"), "Japan, ¥"),
         (UIImage(named: "mexico"), "Mexico, $"),
         (UIImage(named: "russia"), "Russia, ₽"),
-        (UIImage(named: "turkey"), "Turkey, ₺")
+        (UIImage(named: "turkey"), "Turkey, ₺"),
+        (UIImage(named: "thb"), "Thailand, ฿")
     ]
 
     static let id = "Cell"

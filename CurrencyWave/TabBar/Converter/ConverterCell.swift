@@ -53,11 +53,11 @@ class ConverterCell: UICollectionViewCell {
         (UIImage(named: "switzerland"), "CHF", "₣"),
         (UIImage(named: "new-zealand"), "NZD", "$"),
         (UIImage(named: "turkey"), "TRY", "₺"),
-        (UIImage(named: "israel"), "ILS", "₪")
+        (UIImage(named: "israel"), "ILS", "₪"),
+        (UIImage(named: "thb"), "THB", "฿")
     ]
 
     static let id = "Cell"
-    var callback: ((String, Double)->())?
 
     func setup(data: String) {
         currencyLabel.text = data

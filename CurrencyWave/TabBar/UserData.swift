@@ -39,7 +39,8 @@ final class UserData {
                     "RUB": 1.0, //RUB
                     "CHF": 1.0, //CHF
                     "NZD": 1.0, //NZD
-                    "TRY": 1.0 //TRY
+                    "TRY": 1.0, //TRY
+                    "THB": 1.0 
             ]
         }
     }
@@ -79,7 +80,7 @@ final class UserData {
             return [
                 "USD": 1.0, //USD
                 "EUR": 1.0, //EUR
-                "GBP" : 1.0, //GBP
+                "GBP": 1.0, //GBP
                 "AUD": 1.0, //AUD
                 "BRL": 1.0, // BRL
                 "CAD": 1.0, //CAD
@@ -90,7 +91,8 @@ final class UserData {
                 "RUB": 1.0, //RUB
                 "CHF": 1.0, //CHF
                 "NZD": 1.0, //NZD
-                "TRY": 1.0 //TRY
+                "TRY": 1.0, //TRY
+                "THB": 1.0
             ]
         }
     }

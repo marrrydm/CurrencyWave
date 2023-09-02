@@ -2,10 +2,10 @@ import TransitionableTab
 import UIKit
 
 enum Type: String {
-    case move
-    case fade
-    case scale
-    case custom
+case move
+case fade
+case scale
+case custom
 
     static var all: [Type] = [.move, .scale, .fade, .custom]
 }
@@ -84,7 +84,7 @@ extension TabBarController: TransitionableTab {
             return animation
         }
     }
-
+    
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         return animateTransition(tabBarController, shouldSelect: viewController)
     }

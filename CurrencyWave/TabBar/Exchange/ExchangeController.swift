@@ -61,7 +61,8 @@ class ExchangeController: UIViewController, UIScrollViewDelegate {
         ("JPY", 0.0069, "¥", UIImage(named: "japan"), "japan"),
         ("MXN", 0.059, "$", UIImage(named: "mexico"), "mexico"),
         ("RUB", 0.0106, "₽", UIImage(named: "russia"), "russia"),
-        ("TRY", 0.037, "₺", UIImage(named: "turkey"), "turkey")
+        ("TRY", 0.037, "₺", UIImage(named: "turkey"), "turkey"),
+        ("THB", 0.0285, "฿", UIImage(named: "thb"), "thb")
     ]
 
     let currensiesUD = Array(UserData.currenciesNew)

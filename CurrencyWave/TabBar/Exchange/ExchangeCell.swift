@@ -41,7 +41,9 @@ class ExchangeCell: UICollectionViewCell {
         (UIImage(named: "russia"), "RUB"),
         (UIImage(named: "switzerland"), "CHF"),
         (UIImage(named: "new-zealand"), "NZD"),
-        (UIImage(named: "turkey"), "TRY")
+        (UIImage(named: "turkey"), "TRY"),
+        (UIImage(named: "thb"), "THB")
+
     ]
 
     static let id = "Cell"

@@ -24,7 +24,7 @@ final class NetworkController {
                                 currency.key == "BRL" || currency.key == "CNY" ||
                                 currency.key == "INR" || currency.key == "RUB" ||
                                 currency.key == "TRY" || currency.key == "IDR" ||
-                                currency.key == "ILS" || currency.key == "MXN" {
+                                currency.key == "ILS" || currency.key == "MXN" || currency.key == "THB" {
                                 let str = String(currency.key)
                                 let val = 1 / Double(currency.value.value)
                                 self.tempCurrency.updateValue(val, forKey: str)
