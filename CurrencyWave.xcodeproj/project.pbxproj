@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C1BA9A0B04EB113FEB773B2B /* Pods_CurrencyWave.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59329106F0511B2577660D88 /* Pods_CurrencyWave.framework */; };
+		471D8FC9749CCC91899B7230 /* Pods_CurrencyWave.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3038D537E518343C26B3FD88 /* Pods_CurrencyWave.framework */; };
 		F8089AF52A94C7B7005F5590 /* NetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8089AF42A94C7B7005F5590 /* NetworkModel.swift */; };
 		F8089AF72A94C7E3005F5590 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8089AF62A94C7E3005F5590 /* NetworkController.swift */; };
 		F8089AFA2A94CDDB005F5590 /* ExchangeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8089AF92A94CDDB005F5590 /* ExchangeCell.swift */; };
@@ -32,13 +32,42 @@
 		F851A8C92AA1FA6900583D71 /* FirstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F851A8C82AA1FA6900583D71 /* FirstVC.swift */; };
 		F851A8CB2AA1FE2E00583D71 /* SecondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F851A8CA2AA1FE2E00583D71 /* SecondVC.swift */; };
 		F851A8CD2AA1FE8500583D71 /* ThirdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F851A8CC2AA1FE8500583D71 /* ThirdVC.swift */; };
+		F88DCC302AAE1D7D008B6DE2 /* OneSignal in Frameworks */ = {isa = PBXBuildFile; productRef = F88DCC2F2AAE1D7D008B6DE2 /* OneSignal */; };
+		F88DCC322AAE1D7D008B6DE2 /* OneSignalExtension in Frameworks */ = {isa = PBXBuildFile; productRef = F88DCC312AAE1D7D008B6DE2 /* OneSignalExtension */; };
+		F88DCC3A2AAE1DDE008B6DE2 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88DCC392AAE1DDE008B6DE2 /* NotificationService.swift */; };
+		F88DCC3E2AAE1DDE008B6DE2 /* OneSignalNotificationServiceExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F88DCC372AAE1DDE008B6DE2 /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F88DCC442AAE1DFC008B6DE2 /* OneSignal in Frameworks */ = {isa = PBXBuildFile; productRef = F88DCC432AAE1DFC008B6DE2 /* OneSignal */; };
 		F899F6052AA37E1A00B193EB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F899F6072AA37E1A00B193EB /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		F88DCC3C2AAE1DDE008B6DE2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F8442D322A8BA8DA00A80BE7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F88DCC362AAE1DDE008B6DE2;
+			remoteInfo = OneSignalNotificationServiceExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F88DCC422AAE1DDF008B6DE2 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				F88DCC3E2AAE1DDE008B6DE2 /* OneSignalNotificationServiceExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		0C7A05E59F7F8CEB37A60220 /* Pods-CurrencyWave.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyWave.release.xcconfig"; path = "Target Support Files/Pods-CurrencyWave/Pods-CurrencyWave.release.xcconfig"; sourceTree = "<group>"; };
-		59329106F0511B2577660D88 /* Pods_CurrencyWave.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CurrencyWave.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B6DAEC744A656C1ADDAC9305 /* Pods-CurrencyWave.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyWave.debug.xcconfig"; path = "Target Support Files/Pods-CurrencyWave/Pods-CurrencyWave.debug.xcconfig"; sourceTree = "<group>"; };
+		3038D537E518343C26B3FD88 /* Pods_CurrencyWave.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CurrencyWave.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		42A556CE2CDA1D122727F845 /* Pods-CurrencyWave.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyWave.debug.xcconfig"; path = "Target Support Files/Pods-CurrencyWave/Pods-CurrencyWave.debug.xcconfig"; sourceTree = "<group>"; };
+		C769EC7A9246F7D64601361F /* Pods-CurrencyWave.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyWave.release.xcconfig"; path = "Target Support Files/Pods-CurrencyWave/Pods-CurrencyWave.release.xcconfig"; sourceTree = "<group>"; };
 		F8089AF42A94C7B7005F5590 /* NetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModel.swift; sourceTree = "<group>"; };
 		F8089AF62A94C7E3005F5590 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		F8089AF92A94CDDB005F5590 /* ExchangeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeCell.swift; sourceTree = "<group>"; };
@@ -65,6 +94,9 @@
 		F851A8C82AA1FA6900583D71 /* FirstVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstVC.swift; sourceTree = "<group>"; };
 		F851A8CA2AA1FE2E00583D71 /* SecondVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondVC.swift; sourceTree = "<group>"; };
 		F851A8CC2AA1FE8500583D71 /* ThirdVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdVC.swift; sourceTree = "<group>"; };
+		F88DCC372AAE1DDE008B6DE2 /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		F88DCC392AAE1DDE008B6DE2 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		F88DCC3B2AAE1DDE008B6DE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F899F6062AA37E1A00B193EB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F899F6082AA37E2300B193EB /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		F899F6092AA37E2300B193EB /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -75,17 +107,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1BA9A0B04EB113FEB773B2B /* Pods_CurrencyWave.framework in Frameworks */,
+				471D8FC9749CCC91899B7230 /* Pods_CurrencyWave.framework in Frameworks */,
+				F88DCC322AAE1D7D008B6DE2 /* OneSignalExtension in Frameworks */,
+				F88DCC302AAE1D7D008B6DE2 /* OneSignal in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F88DCC342AAE1DDE008B6DE2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F88DCC442AAE1DFC008B6DE2 /* OneSignal in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A2E00824F6CE4AC419B96A0B /* Frameworks */ = {
+		64F421E6785AB40124382F8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				59329106F0511B2577660D88 /* Pods_CurrencyWave.framework */,
+				3038D537E518343C26B3FD88 /* Pods_CurrencyWave.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -93,8 +135,8 @@
 		D1807F88F954233EF520462A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				B6DAEC744A656C1ADDAC9305 /* Pods-CurrencyWave.debug.xcconfig */,
-				0C7A05E59F7F8CEB37A60220 /* Pods-CurrencyWave.release.xcconfig */,
+				42A556CE2CDA1D122727F845 /* Pods-CurrencyWave.debug.xcconfig */,
+				C769EC7A9246F7D64601361F /* Pods-CurrencyWave.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -130,9 +172,10 @@
 			isa = PBXGroup;
 			children = (
 				F8442D3C2A8BA8DA00A80BE7 /* CurrencyWave */,
+				F88DCC382AAE1DDE008B6DE2 /* OneSignalNotificationServiceExtension */,
 				F8442D3B2A8BA8DA00A80BE7 /* Products */,
 				D1807F88F954233EF520462A /* Pods */,
-				A2E00824F6CE4AC419B96A0B /* Frameworks */,
+				64F421E6785AB40124382F8A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -140,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				F8442D3A2A8BA8DA00A80BE7 /* CurrencyWave.app */,
+				F88DCC372AAE1DDE008B6DE2 /* OneSignalNotificationServiceExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -214,6 +258,15 @@
 			path = Onboarding;
 			sourceTree = "<group>";
 		};
+		F88DCC382AAE1DDE008B6DE2 /* OneSignalNotificationServiceExtension */ = {
+			isa = PBXGroup;
+			children = (
+				F88DCC392AAE1DDE008B6DE2 /* NotificationService.swift */,
+				F88DCC3B2AAE1DDE008B6DE2 /* Info.plist */,
+			);
+			path = OneSignalNotificationServiceExtension;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -221,20 +274,46 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F8442D4E2A8BA8DB00A80BE7 /* Build configuration list for PBXNativeTarget "CurrencyWave" */;
 			buildPhases = (
-				974B3F937C3472A57810179E /* [CP] Check Pods Manifest.lock */,
+				3BD3A02C63ABEB775C14E331 /* [CP] Check Pods Manifest.lock */,
 				F8442D362A8BA8DA00A80BE7 /* Sources */,
 				F8442D372A8BA8DA00A80BE7 /* Frameworks */,
 				F8442D382A8BA8DA00A80BE7 /* Resources */,
-				8B9A5F0CEB0C085A2572F7CC /* [CP] Embed Pods Frameworks */,
+				D410683C1E05BCFE64AC7445 /* [CP] Embed Pods Frameworks */,
+				F88DCC422AAE1DDF008B6DE2 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F88DCC3D2AAE1DDE008B6DE2 /* PBXTargetDependency */,
+			);
+			name = CurrencyWave;
+			packageProductDependencies = (
+				F88DCC2F2AAE1D7D008B6DE2 /* OneSignal */,
+				F88DCC312AAE1D7D008B6DE2 /* OneSignalExtension */,
+			);
+			productName = CurrencyWave;
+			productReference = F8442D3A2A8BA8DA00A80BE7 /* CurrencyWave.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F88DCC362AAE1DDE008B6DE2 /* OneSignalNotificationServiceExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F88DCC3F2AAE1DDF008B6DE2 /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */;
+			buildPhases = (
+				F88DCC332AAE1DDE008B6DE2 /* Sources */,
+				F88DCC342AAE1DDE008B6DE2 /* Frameworks */,
+				F88DCC352AAE1DDE008B6DE2 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = CurrencyWave;
-			productName = CurrencyWave;
-			productReference = F8442D3A2A8BA8DA00A80BE7 /* CurrencyWave.app */;
-			productType = "com.apple.product-type.application";
+			name = OneSignalNotificationServiceExtension;
+			packageProductDependencies = (
+				F88DCC432AAE1DFC008B6DE2 /* OneSignal */,
+			);
+			productName = OneSignalNotificationServiceExtension;
+			productReference = F88DCC372AAE1DDE008B6DE2 /* OneSignalNotificationServiceExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -249,6 +328,9 @@
 					F8442D392A8BA8DA00A80BE7 = {
 						CreatedOnToolsVersion = 14.0.1;
 					};
+					F88DCC362AAE1DDE008B6DE2 = {
+						CreatedOnToolsVersion = 14.0.1;
+					};
 				};
 			};
 			buildConfigurationList = F8442D352A8BA8DA00A80BE7 /* Build configuration list for PBXProject "CurrencyWave" */;
@@ -261,11 +343,15 @@
 				th,
 			);
 			mainGroup = F8442D312A8BA8DA00A80BE7;
+			packageReferences = (
+				F88DCC2E2AAE1D7D008B6DE2 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */,
+			);
 			productRefGroup = F8442D3B2A8BA8DA00A80BE7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				F8442D392A8BA8DA00A80BE7 /* CurrencyWave */,
+				F88DCC362AAE1DDE008B6DE2 /* OneSignalNotificationServiceExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -281,27 +367,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		8B9A5F0CEB0C085A2572F7CC /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
+		F88DCC352AAE1DDE008B6DE2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CurrencyWave/Pods-CurrencyWave-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CurrencyWave/Pods-CurrencyWave-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CurrencyWave/Pods-CurrencyWave-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
-		974B3F937C3472A57810179E /* [CP] Check Pods Manifest.lock */ = {
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3BD3A02C63ABEB775C14E331 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -321,6 +397,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D410683C1E05BCFE64AC7445 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CurrencyWave/Pods-CurrencyWave-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CurrencyWave/Pods-CurrencyWave-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CurrencyWave/Pods-CurrencyWave-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -355,7 +448,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F88DCC332AAE1DDE008B6DE2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F88DCC3A2AAE1DDE008B6DE2 /* NotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F88DCC3D2AAE1DDE008B6DE2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F88DCC362AAE1DDE008B6DE2 /* OneSignalNotificationServiceExtension */;
+			targetProxy = F88DCC3C2AAE1DDE008B6DE2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		F8442D482A8BA8DB00A80BE7 /* LaunchScreen.storyboard */ = {
@@ -497,8 +606,9 @@
 		};
 		F8442D4F2A8BA8DB00A80BE7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B6DAEC744A656C1ADDAC9305 /* Pods-CurrencyWave.debug.xcconfig */;
+			baseConfigurationReference = 42A556CE2CDA1D122727F845 /* Pods-CurrencyWave.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -506,6 +616,9 @@
 				DEVELOPMENT_TEAM = T43M2RW9QP;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CurrencyWave/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Currency Wave";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "This identifier will be used to deliver personalized ads to you.\n";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -523,14 +636,15 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		F8442D502A8BA8DB00A80BE7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0C7A05E59F7F8CEB37A60220 /* Pods-CurrencyWave.release.xcconfig */;
+			baseConfigurationReference = C769EC7A9246F7D64601361F /* Pods-CurrencyWave.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -538,6 +652,9 @@
 				DEVELOPMENT_TEAM = T43M2RW9QP;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CurrencyWave/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Currency Wave";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "This identifier will be used to deliver personalized ads to you.\n";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -553,6 +670,58 @@
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		F88DCC402AAE1DDF008B6DE2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T43M2RW9QP;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = OneSignalNotificationServiceExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mganeeva.CurrencyWave.OneSignalNotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F88DCC412AAE1DDF008B6DE2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T43M2RW9QP;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = OneSignalNotificationServiceExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mganeeva.CurrencyWave.OneSignalNotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -580,7 +749,45 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		F88DCC3F2AAE1DDF008B6DE2 /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F88DCC402AAE1DDF008B6DE2 /* Debug */,
+				F88DCC412AAE1DDF008B6DE2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F88DCC2E2AAE1D7D008B6DE2 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/OneSignal/OneSignal-XCFramework";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F88DCC2F2AAE1D7D008B6DE2 /* OneSignal */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F88DCC2E2AAE1D7D008B6DE2 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;
+			productName = OneSignal;
+		};
+		F88DCC312AAE1D7D008B6DE2 /* OneSignalExtension */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F88DCC2E2AAE1D7D008B6DE2 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;
+			productName = OneSignalExtension;
+		};
+		F88DCC432AAE1DFC008B6DE2 /* OneSignal */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F88DCC2E2AAE1D7D008B6DE2 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;
+			productName = OneSignal;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F8442D322A8BA8DA00A80BE7 /* Project object */;
 }

@@ -1,5 +1,3 @@
-import AppsFlyerLib
-import FirebaseAnalytics
 import UIKit
 
 class PreloaderController: UIViewController {
@@ -12,23 +10,17 @@ class PreloaderController: UIViewController {
         return view
     }()
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        AppsFlyerLib.shared().logEvent("onboarding_start", withValues: nil)
-        Analytics.logEvent("onboarding_start", parameters: nil)
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(red: 0.95, green: 0.95, blue: 0.97, alpha: 1)
+        view.backgroundColor = UIColor(red: 0.122, green: 0.129, blue: 0.149, alpha: 1)
 
         view.addSubview(logoView)
 
         NSLayoutConstraint.activate([
             logoView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             logoView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
-            logoView.heightAnchor.constraint(equalToConstant: 79),
-            logoView.widthAnchor.constraint(equalToConstant: 79)
+            logoView.heightAnchor.constraint(equalToConstant: 69),
+            logoView.widthAnchor.constraint(equalToConstant: 69)
         ])
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {

@@ -18,7 +18,17 @@
 
 "Currency Converter" = "Currency Converter";
 
-"onb1" = "See current exchange rates";
-"onb2" = "Сonvenient Currency Converter";
-"onb3" = "Enhance your app experience";
+"onb1.1" = "Enhance your app experience";
+"onb1.2" = 'Select "Allow" to minimize the frequency of ads appearing';
+"onb2.1" = "Your feedback is important to us";
+"onb2.2" = "We like getting your feedback and we analyze all of them to become even better";
+"onb3.1" = "Turn on notification";
+"onb3.2" = "Turn on push notifications, to get all the latest information";
 "btn" = "Next";
+
+"name1" = "Dina Trading";
+"name2" = "Auy Hosnim";
+"name3" = "Rafa Moreno";
+"comment1" = "I've tried many trading apps, but this one stands out. It's fantastic!";
+"comment2" = "This app has all the tools I need for successful trading.";
+"comment3" = "Trading made easy with this app. Highly recommend!";

@@ -106,14 +106,32 @@ class SettingController: UIViewController, UIScrollViewDelegate {
 
 extension SettingController {
     @objc private func policyAction() {
-        if let url = URL(string: "https://www.freeprivacypolicy.com/live/f043dd2d-3b13-4a96-b1d9-5c0adbdbc0b8"), UIApplication.shared.canOpenURL(url) {
+        if let url = URL(string: "https://www.freeprivacypolicy.com/live/649c057d-4844-46a3-8526-21f0dc8f9354"), UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }
 
     @objc private func termsAction() {
-        if let url = URL(string: "https://www.freeprivacypolicy.com/live/12043b8e-f70e-4ef8-86cc-e12492390923"), UIApplication.shared.canOpenURL(url) {
+        if let url = URL(string: "https://www.freeprivacypolicy.com/live/2d135edd-4740-4839-b7e7-9278478c63c9"), UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }
+}
+
+class GrdientView: UIButton {
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        gradientLayer.frame = bounds
+    }
+
+    private lazy var gradientLayer: CAGradientLayer = {
+        let l = CAGradientLayer()
+        l.frame = self.bounds
+        l.colors = [UIColor(red: 0.339, green: 0.339, blue: 0.387, alpha: 1).cgColor, UIColor(red: 0.097, green: 0.097, blue: 0.1, alpha: 1).cgColor]
+        l.startPoint = CGPoint(x: 0, y: 0.5)
+        l.endPoint = CGPoint(x: 1, y: 0.5)
+        l.cornerRadius = 13
+        layer.insertSublayer(l, at: 0)
+        return l
+    }()
 }
