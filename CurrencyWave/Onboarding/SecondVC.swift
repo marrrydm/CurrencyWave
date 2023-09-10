@@ -169,7 +169,7 @@ class SecondVC: UIViewController {
 
     private func makeConstraints() {
         view1.translatesAutoresizingMaskIntoConstraints = false
-        view1.bottomAnchor.constraint(equalTo: view2.topAnchor, constant: 6).isActive = true
+        view1.bottomAnchor.constraint(equalTo: view2.topAnchor, constant: 8).isActive = true
         view1.widthAnchor.constraint(equalToConstant: 244).isActive = true
         view1.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -45).isActive = true
         view1.topAnchor.constraint(equalTo: person1.topAnchor, constant: -16).isActive = true
@@ -194,7 +194,7 @@ class SecondVC: UIViewController {
         comment1.leadingAnchor.constraint(equalTo: view1.leadingAnchor, constant: 16).isActive = true
 
         view2.translatesAutoresizingMaskIntoConstraints = false
-        view2.bottomAnchor.constraint(equalTo: view3.topAnchor, constant: 6).isActive = true
+        view2.bottomAnchor.constraint(equalTo: view3.topAnchor, constant: 8).isActive = true
         view2.widthAnchor.constraint(equalToConstant: 244).isActive = true
         view2.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
         view2.topAnchor.constraint(equalTo: person2.topAnchor, constant: -16).isActive = true
@@ -219,7 +219,7 @@ class SecondVC: UIViewController {
         comment2.leadingAnchor.constraint(equalTo: view2.leadingAnchor, constant: 16).isActive = true
 
         view3.translatesAutoresizingMaskIntoConstraints = false
-        view3.bottomAnchor.constraint(equalTo: labelTitle.topAnchor, constant: -30).isActive = true
+        view3.bottomAnchor.constraint(equalTo: labelTitle.topAnchor, constant: -20).isActive = true
         view3.widthAnchor.constraint(equalToConstant: 244).isActive = true
         view3.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
         view3.topAnchor.constraint(equalTo: person3.topAnchor, constant: -16).isActive = true
@@ -255,7 +255,7 @@ class SecondVC: UIViewController {
         labelTitle.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
 
         labelDescription.translatesAutoresizingMaskIntoConstraints = false
-        labelDescription.bottomAnchor.constraint(equalTo: nextButton.topAnchor, constant: -40).isActive = true
+        labelDescription.bottomAnchor.constraint(equalTo: nextButton.topAnchor, constant: -20).isActive = true
         labelDescription.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
         labelDescription.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
     }

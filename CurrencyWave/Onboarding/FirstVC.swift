@@ -91,12 +91,12 @@ class FirstVC: UIViewController {
         labelTitle.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
 
         labelDescription.translatesAutoresizingMaskIntoConstraints = false
-        labelDescription.bottomAnchor.constraint(equalTo: nextButton.topAnchor, constant: -40).isActive = true
+        labelDescription.bottomAnchor.constraint(equalTo: nextButton.topAnchor, constant: -20).isActive = true
         labelDescription.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
         labelDescription.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
 
         logoView.translatesAutoresizingMaskIntoConstraints = false
-        logoView.bottomAnchor.constraint(equalTo: labelTitle.topAnchor, constant: -80).isActive = true
+        logoView.bottomAnchor.constraint(equalTo: labelTitle.topAnchor, constant: -60).isActive = true
         logoView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 38).isActive = true
         logoView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -38).isActive = true
         logoView.heightAnchor.constraint(equalToConstant: 307).isActive = true
