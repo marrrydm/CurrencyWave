@@ -3,7 +3,7 @@ import AppsFlyerLib
 import FirebaseAnalytics
 import UIKit
 
-class FirstVC: UIViewController {
+final class FirstVC: UIViewController {
     private let logoView: UIImageView = {
         let view = UIImageView()
         view.image = UIImage(named: "pic1")

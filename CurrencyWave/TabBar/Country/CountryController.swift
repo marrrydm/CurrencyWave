@@ -4,7 +4,7 @@ protocol CountryDelegate: AnyObject {
     func updateCountry(_ value: String?)
 }
 
-class CountryController: UIViewController {
+final class CountryController: UIViewController {
     private let titleLabel: UILabel = {
         let labelTitle = UILabel()
         labelTitle.textColor = .black
@@ -169,7 +169,7 @@ extension CountryController: UITableViewDelegate {
     }
 }
 
-extension CountryController {
+private extension CountryController {
     @objc private func done() {
         navigationController?.popViewController(animated: false)
     }

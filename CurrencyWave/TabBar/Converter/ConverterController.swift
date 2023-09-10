@@ -1,6 +1,6 @@
 import UIKit
 
-class ConverterController: UIViewController, UIScrollViewDelegate {
+final class ConverterController: UIViewController, UIScrollViewDelegate {
     private let titleLabel: UILabel = {
         let view = UILabel()
         view.textColor = .black

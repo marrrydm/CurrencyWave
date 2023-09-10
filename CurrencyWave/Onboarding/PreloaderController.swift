@@ -1,6 +1,6 @@
 import UIKit
 
-class PreloaderController: UIViewController {
+final class PreloaderController: UIViewController {
     private let logoView: UIImageView = {
         let view = UIImageView()
         view.image = UIImage(named: "logoImg")

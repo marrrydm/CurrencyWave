@@ -1,7 +1,7 @@
 import StoreKit
 import UIKit
 
-class SecondVC: UIViewController {
+final class SecondVC: UIViewController {
     private let view1: GrdientView = {
         let view = GrdientView()
         return view

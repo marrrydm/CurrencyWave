@@ -1,6 +1,6 @@
 import UIKit
 
-class PairCell: UICollectionViewCell {
+final class PairCell: UICollectionViewCell {
     var pairLabel = UILabel()
     static let id = "Cell"
 

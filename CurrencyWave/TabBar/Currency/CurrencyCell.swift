@@ -1,6 +1,6 @@
 import UIKit
 
-class CurrencyCell: UITableViewCell {
+final class CurrencyCell: UITableViewCell {
     var countryLabel: UILabel = {
         var view = UILabel()
         view.textColor = .black

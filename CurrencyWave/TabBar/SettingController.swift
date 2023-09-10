@@ -1,6 +1,6 @@
 import UIKit
 
-class SettingController: UIViewController, UIScrollViewDelegate {
+final class SettingController: UIViewController, UIScrollViewDelegate {
     private let titleLabel: UILabel = {
         let view = UILabel()
         view.textColor = .black
@@ -103,8 +103,7 @@ class SettingController: UIViewController, UIScrollViewDelegate {
     }
 }
 
-
-extension SettingController {
+private extension SettingController {
     @objc private func policyAction() {
         if let url = URL(string: "https://www.freeprivacypolicy.com/live/649c057d-4844-46a3-8526-21f0dc8f9354"), UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)

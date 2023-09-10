@@ -1,6 +1,6 @@
 import UIKit
 
-class ExchangeCell: UICollectionViewCell {
+final class ExchangeCell: UICollectionViewCell {
     var currencyLabel: UILabel = {
         var view = UILabel()
         view.textColor = .black

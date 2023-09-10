@@ -8,7 +8,7 @@ protocol CurrencyDelegate2: AnyObject {
     func updateCurrency2(_ value: [String: Double]?)
 }
 
-class CurrencyController: UIViewController {
+final class CurrencyController: UIViewController {
     private let titleLabel: UILabel = {
         let labelTitle = UILabel()
         labelTitle.textColor = .black

@@ -1,6 +1,6 @@
 import UIKit
 
-class ConverterCell: UICollectionViewCell {
+final class ConverterCell: UICollectionViewCell {
     var currencyLabel: UILabel = {
         var view = UILabel()
         view.textColor = .black

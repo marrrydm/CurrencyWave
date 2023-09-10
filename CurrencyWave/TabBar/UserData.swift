@@ -1,7 +1,6 @@
 import UIKit
 
 final class UserData {
-
     public enum SettingsKeys: String, CaseIterable {
         case currencies
         case pairs

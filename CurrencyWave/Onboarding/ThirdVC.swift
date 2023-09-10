@@ -3,7 +3,7 @@ import FirebaseAnalytics
 import OneSignal
 import UIKit
 
-class ThirdVC: UIViewController {
+final class ThirdVC: UIViewController {
     private let logoView: UIImageView = {
         let view = UIImageView()
         view.image = UIImage(named: "pic3")

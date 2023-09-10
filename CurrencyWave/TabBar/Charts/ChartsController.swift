@@ -1,7 +1,7 @@
 import UIKit
 import WebKit
 
-class ChartsController: UIViewController, UIScrollViewDelegate {
+final class ChartsController: UIViewController, UIScrollViewDelegate {
     private let titleLabel: UILabel = {
         let view = UILabel()
         view.textColor = .black

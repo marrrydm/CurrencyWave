@@ -1,6 +1,6 @@
 import UIKit
 
-class ExchangeController: UIViewController, UIScrollViewDelegate {
+final class ExchangeController: UIViewController, UIScrollViewDelegate {
     private let titleLabel: UILabel = {
         let view = UILabel()
         view.textColor = .black

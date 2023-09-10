@@ -10,7 +10,7 @@ case custom
     static var all: [Type] = [.move, .scale, .fade, .custom]
 }
 
-class TabBarController: UITabBarController {
+final class TabBarController: UITabBarController {
     var type: Type = .move
 
     override func viewDidLoad() {
